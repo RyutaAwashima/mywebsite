@@ -3,41 +3,196 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My GitHub Page</title>
+  <title>グアちゃんの紹介ページ</title>
   <style>
+    :root {
+      --bg: #f6fbf4;
+      --card: #ffffff;
+      --main: #2f855a;
+      --sub: #4a5568;
+      --accent: #d9f99d;
+      --border: #d1e7d6;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f5f7fb;
-      color: #222;
+      font-family: "Hiragino Sans", "Yu Gothic", sans-serif;
+      background: linear-gradient(180deg, #eef9ee 0%, var(--bg) 100%);
+      color: #1f2937;
+      line-height: 1.7;
+    }
+
+    header {
+      background: var(--main);
+      color: white;
+      padding: 48px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0 0 12px;
+      font-size: 2.2rem;
+    }
+
+    header p {
+      margin: 0;
+      font-size: 1.05rem;
+      opacity: 0.95;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 24px rgba(47, 133, 90, 0.08);
+    }
+
+    h2 {
+      color: var(--main);
+      margin-top: 0;
+      margin-bottom: 16px;
+      font-size: 1.4rem;
+    }
+
+    .hero-image {
+      width: 100%;
+      min-height: 280px;
+      border: 2px dashed #9ac7a3;
+      border-radius: 16px;
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 100vh;
-    }
-    .container {
+      background: #f8fff7;
+      color: var(--sub);
       text-align: center;
-      background: white;
-      padding: 40px;
-      border-radius: 16px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-      max-width: 640px;
-      margin: 24px;
+      padding: 20px;
     }
-    h1 {
-      margin-bottom: 16px;
-      color: #1f4fd1;
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
     }
-    p {
-      line-height: 1.7;
+
+    .profile-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .profile-list li {
+      padding: 10px 0;
+      border-bottom: 1px solid #e5efe7;
+    }
+
+    .profile-list li:last-child {
+      border-bottom: none;
+    }
+
+    .label {
+      font-weight: bold;
+      color: var(--main);
+    }
+
+    .memo {
+      background: #f7fee7;
+      border-left: 5px solid #84cc16;
+      padding: 14px 16px;
+      border-radius: 10px;
+      color: #3f6212;
+    }
+
+    footer {
+      text-align: center;
+      color: #6b7280;
+      font-size: 0.95rem;
+      padding: 24px 16px 40px;
+    }
+
+    @media (max-width: 640px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      .card {
+        padding: 20px;
+      }
     }
   </style>
 </head>
 <body>
+  <header>
+    <h1>グアちゃんの紹介ページ</h1>
+    <p>イグアナの「グアちゃん」を紹介するためのWebページです。</p>
+  </header>
+
   <main class="container">
-    <h1>GitHub Pagesへようこそ</h1>
-    <p>このページは <strong>RyutaAwashima/mywebsite</strong> の <code>index.html</code> から表示されています。</p>
-    <p>ここを自由に書き換えることで、あなたのWebページを公開できます。</p>
+    <section class="card">
+      <h2>メイン画像</h2>
+      <div class="hero-image">
+        <div>
+          <p><strong>ここにグアちゃんの画像を入れてください</strong></p>
+          <p>例: <code>&lt;img src="images/gua.jpg" alt="グアちゃんの写真" /&gt;</code></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>プロフィール</h2>
+        <ul class="profile-list">
+          <li><span class="label">名前:</span> グアちゃん</li>
+          <li><span class="label">種類:</span> イグアナ</li>
+          <li><span class="label">性格:</span> ここに性格を書いてください</li>
+          <li><span class="label">好きな食べ物:</span> ここに好きな食べ物を書いてください</li>
+          <li><span class="label">誕生日:</span> ここに誕生日を書いてください</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>グアちゃんについて</h2>
+        <p>
+          ここにグアちゃんの紹介文を書いてください。<br />
+          たとえば、普段の様子、かわいいところ、飼っていて感じる魅力などを自由に追加できます。
+        </p>
+        <div class="memo">
+          後で文章を変更しやすいように、今は雛形の文章を入れています。
+        </div>
+      </article>
+    </section>
+
+    <section class="card">
+      <h2>お気に入りポイント</h2>
+      <ul>
+        <li>ここにお気に入りポイント 1 を書いてください</li>
+        <li>ここにお気に入りポイント 2 を書いてください</li>
+        <li>ここにお気に入りポイント 3 を書いてください</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>成長記録・日記</h2>
+      <p>
+        ここには、グアちゃんの日々の様子や成長記録を書けます。<br />
+        例: 「今日は元気にごはんを食べました」「お気に入りの場所でのんびりしていました」など。
+      </p>
+    </section>
   </main>
+
+  <footer>
+    <p>© グアちゃんの紹介ページ</p>
+  </footer>
 </body>
 </html>
